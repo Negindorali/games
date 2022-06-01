@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if request.user_agent.is_pc %}
+<main id="main" class="main" :class="[open ? 'open':'', close ? '' : 'close']">
+    {% endif %}
+    {% if request.user_agent.is_mobile and 'iPad' not in request.user_agent.device %}
+    <main id="main" class="main" :class="[open ? 'open' : '']">
+        {% endif %}
+        {% if request.user_agent.is_tablet %}
+        <main id="main" class="main" :class="[close ? 'close' : '']">
+            {% endif %}
+            <section class="main__text">...</section>
+        </main>
+</body>
+</html>

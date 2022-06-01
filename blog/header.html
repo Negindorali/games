@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<header class="header">
+    {% if request.user_agent.is_pc %}
+    <div id="header__text__pc"
+         class="header__text"
+         @click="
+                $dispatch('toggle');
+                header_text = !header_text;
+            "
+         x-text="[header_text ? 'CLOSE' : 'OPEN']"
+    >CLOSE</div>
+    </div>
+    {% endif %}
+    {% if request.user_agent.is_mobile and 'iPad' not in request.user_agent.device %}
+    <div id="header__text__sp"
+         class="header__text"
+         @click="
+                $dispatch('toggle');
+                header_text = !header_text;
+        "
+         x-text="[header_text ? 'CLOSE' : 'OPEN']"
+    >OPEN</div>
+    </div>
+    {% endif %}
+    {% if request.user_agent.is_tablet %}
+    <div id="header__text__tablet"
+         class="header__text"
+         @click="
+                $dispatch('toggle');
+                header_text = !header_text;
+            "
+         x-text="[header_text ? 'OPEN':'CLOSE']"
+    >CLOSE</div>
+    </div>
+    {% endif %}
+    <div class="header__search">...</div>
+</header>
+
+</body>
+</html>
