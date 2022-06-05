@@ -8,6 +8,9 @@
     <title>Game Zone</title>
 </head>
 <body class="m-0">
+<div id="loader_parent">
+    <div id="loader"></div>
+</div>
 <div class="grid container grid-cols-6">
     <div class="grid header grid-cols-6 col-span-6 sticky-top border-bottom">
         <div class="content-center flex self-center">
@@ -20,8 +23,12 @@
         </div>
         <div class="self-center col-span-5">
             <ul class="flex">
-                <li>Home</li>
-                <li>About</li>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./pages/about.html">About</a>
+                </li>
                 <li>
                     <a href="./pages/login.html">Login</a>
                 </li>
@@ -30,11 +37,16 @@
     </div>
     <div class="flex content-center border-right sm:d-none">
         <ul class="m-0 p-0">
-            <li>Action</li>
-            <li>Simulation Games</li>
-            <li>Drama</li>
-            <li>Adventure</li>
-            <li>Role-Playing</li>
+            <li class="btn">
+                Game Genres <span class="caret"></span>
+                <ul style="display: none">
+                    <li>Action</li>
+                    <li>Simulation Games</li>
+                    <li>Drama</li>
+                    <li>Adventure</li>
+                    <li>Role-Playing</li>
+                </ul>
+            </li>
         </ul>
     </div>
     <div class="col-span-5 sm:col-span-6 justify-center grid grid-cols-3 sm:grid-cols-1 gap">
@@ -135,5 +147,6 @@
         </svg>
     </div>
 </div>
+<script src="./assets/js/custom.js"></script>
 </body>
 </html>
